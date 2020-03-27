@@ -42,18 +42,11 @@ export class CellComponent {
       field: 'total',
       filter: 'agNumberColumnFilter',
       valueFormatter: ({ value }) => this.currencyPipe.transform(String(value)),
-      editable: true
-      // cellStyle: ({ value }) => ({
-      //   'background-color': value > 1000 ? '#42b983' : '#fff'
-      // }),
-
-      // cellClass: ({ value }) =>
-      //   value < 0 ? 'cell-value-negative' : 'cell-value-positive'
-
-      // cellClassRules: {
-      //   'cell-value-negative': ({ value }) => value < 0,
-      //   'cell-value-positive': ({ value }) => value >= 0
-      // }
+      editable: true,
+      cellClassRules: {
+        'cell-value-negative': ({ value }) => value < 0,
+        'cell-value-positive': ({ value }) => value >= 0
+      }
     }
   ];
 
