@@ -1,0 +1,22 @@
+<app-content>
+  <app-title>Grid API</app-title>
+  <ag-grid-angular
+    #agGrid
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+  <p>
+    <button (click)="onSelectAll()">Select All</button>
+    <button (click)="onDeselectAll()">Deselect All</button>
+    <button (click)="onExportToCsv()">Export to CSV</button>
+    <button (click)="onSortByNameAndPrice('asc')">
+      Sort Name &amp; Price Ascending
+    </button>
+    <button (click)="onSortByNameAndPrice('desc')">
+      Sort Name &amp; Price Descending
+    </button>
+  </p>
+</app-content>

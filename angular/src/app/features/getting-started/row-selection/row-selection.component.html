@@ -1,0 +1,15 @@
+<app-content>
+  <app-title>Row Selection Demo</app-title>
+  <ag-grid-angular
+    #agGrid
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    (selectionChanged)="onSelectionChanged()"
+    rowSelection="multiple"
+  >
+  </ag-grid-angular>
+
+  <p>Selection: {{ selection | async }}</p>
+</app-content>

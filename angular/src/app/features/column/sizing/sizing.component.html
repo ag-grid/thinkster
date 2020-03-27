@@ -1,0 +1,11 @@
+<app-content>
+  <app-title>Column Sizing</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+</app-content>

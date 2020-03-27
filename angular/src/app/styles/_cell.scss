@@ -1,0 +1,30 @@
+.cell-span {
+  background: #efefef;
+}
+
+.full-width-cell {
+  background: #000;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  white-space: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: #fff;
+}
+
+.full-width-cell::after {
+  background-image: url('https://source.unsplash.com/random');
+  background-position: center;
+  background-size: cover;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+}

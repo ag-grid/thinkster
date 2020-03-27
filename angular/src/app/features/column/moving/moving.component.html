@@ -1,0 +1,18 @@
+<app-content>
+  <app-title>Column Moving</app-title>
+  <!-- suppressDragLeaveHidesColumns: prevents a column from being removed if dragged outside the grid. -->
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    suppressDragLeaveHidesColumns="true"
+  >
+  </ag-grid-angular>
+  <p>
+    <input type="text" [formControl]="index" />
+    <button (click)="onMoveCatchPhrase()">Move Catch Phrase</button>
+    <button (click)="onMoveAddress()">Move Address</button>
+  </p>
+</app-content>

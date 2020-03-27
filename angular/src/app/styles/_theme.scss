@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+$grid-demo-primary: mat-palette($mat-blue, 500, 100, 400);
+$grid-demo-accent: mat-palette($mat-gray, 600, 200, 500);
+$grid-demo-warn: mat-palette($mat-red);
+$grid-demo-theme: mat-light-theme(
+  $grid-demo-primary,
+  $grid-demo-accent,
+  $grid-demo-warn
+);
+@include angular-material-theme($grid-demo-theme);
+
+.mat-button {
+  border: 1px solid rgba(0, 0, 0, 0.7) !important;
+}

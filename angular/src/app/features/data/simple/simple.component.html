@@ -1,0 +1,10 @@
+<app-content>
+  <app-title>Simple Data</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+</app-content>

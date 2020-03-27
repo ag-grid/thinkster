@@ -1,0 +1,40 @@
+:host {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .container {
+    height: 100%;
+    width: 100%;
+
+    --menu-width: 250px;
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      background: #37474f;
+      color: #fff;
+      width: var(--menu-width);
+      height: 100%;
+      position: fixed;
+      overflow-y: auto;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      margin: 0 0 0 var(--menu-width);
+      width: calc(100% - var(--menu-width));
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<app-content>
+  <app-title>Row Dragging</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    animateRows="true"
+    rowDragManaged="true"
+  >
+  </ag-grid-angular>
+  <p>
+    <button (click)="onToggleSuppressRowDrag()">
+      Toggle Suppress of Row Drag
+    </button>
+  </p>
+</app-content>

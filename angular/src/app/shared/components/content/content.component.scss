@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 20px;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+}

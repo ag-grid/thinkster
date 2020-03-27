@@ -1,0 +1,12 @@
+<app-content>
+  <app-title>Spanning Rows</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    suppressRowTransform="true"
+  >
+  </ag-grid-angular>
+  <!-- <pre>{{ data | json }}</pre> -->
+</app-content>

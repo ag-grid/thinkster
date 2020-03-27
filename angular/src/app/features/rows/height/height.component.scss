@@ -1,0 +1,8 @@
+ag-grid-angular {
+  height: 500px;
+  width: 100%;
+}
+
+::ng-deep .cell-wrap-text {
+  white-space: normal !important;
+}

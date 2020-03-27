@@ -1,0 +1,15 @@
+<app-content>
+  <app-title>Quick Filter Searching</app-title>
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput [formControl]="q" type="search" />
+  </mat-form-field>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="customers"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    cacheQuickFilter="true"
+  >
+  </ag-grid-angular>
+</app-content>

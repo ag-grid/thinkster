@@ -1,0 +1,13 @@
+<app-content>
+  <app-title>Row Height</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+  >
+    <!-- Specify callback function to calculate height: [getRowHeight]="getRowHeight" -->
+    <!-- We also specify the rowHeight grid option via an attribute rowHeight="50" -->
+    <!--  -->
+  </ag-grid-angular>
+</app-content>
