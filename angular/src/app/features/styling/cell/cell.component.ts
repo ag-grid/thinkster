@@ -1,7 +1,7 @@
-import { ColDef, GridApi } from 'ag-grid-community';
+import { ColDef } from 'ag-grid-community';
 
 import { CurrencyPipe, DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   accounts,
@@ -12,10 +12,10 @@ import {
 } from '../../../../../data/data.json';
 
 @Component({
-  templateUrl: './full-width.component.html',
-  styleUrls: ['./full-width.component.scss']
+  templateUrl: './cell.component.html',
+  styleUrls: ['./cell.component.scss']
 })
-export class FullWidthComponent implements OnInit {
+export class CellComponent {
   /**
    * The column definitions is an array of ColDef objects.
    */
@@ -23,7 +23,8 @@ export class FullWidthComponent implements OnInit {
     {
       headerName: 'Customer Name',
       field: 'customer.name',
-      filter: 'agTextColumnFilter'
+      filter: 'agTextColumnFilter',
+      cellStyle: { color: '#fff', 'background-color': '#37474f' }
     },
     {
       headerName: 'Account No',
@@ -40,7 +41,19 @@ export class FullWidthComponent implements OnInit {
       headerName: 'Total',
       field: 'total',
       filter: 'agNumberColumnFilter',
-      valueFormatter: ({ value }) => this.currencyPipe.transform(String(value))
+      valueFormatter: ({ value }) => this.currencyPipe.transform(String(value)),
+      editable: true
+      // cellStyle: ({ value }) => ({
+      //   'background-color': value > 1000 ? '#42b983' : '#fff'
+      // }),
+
+      // cellClass: ({ value }) =>
+      //   value < 0 ? 'cell-value-negative' : 'cell-value-positive'
+
+      // cellClassRules: {
+      //   'cell-value-negative': ({ value }) => value < 0,
+      //   'cell-value-positive': ({ value }) => value >= 0
+      // }
     }
   ];
 
@@ -66,36 +79,4 @@ export class FullWidthComponent implements OnInit {
     private readonly currencyPipe: CurrencyPipe,
     private readonly datePipe: DatePipe
   ) {}
-
-  ngOnInit() {
-    this.rowData = [
-      {
-        isFullWidthCell: true
-      },
-      ...this.rowData
-    ];
-  }
-
-  fullWidthCellRenderer(): string {
-    return `
-      <div class="full-width-cell">
-        ag-Grid is 💪
-      </div>
-    `;
-  }
-
-  getRowHeight({ data }: { data: { [key: string]: any } }): number {
-    if (data.isFullWidthCell) {
-      return 200;
-    }
-    return 25;
-  }
-
-  isFullWidthCell({ data }): boolean {
-    return data.isFullWidthCell;
-  }
-
-  onGridReady({ api }: { api: GridApi }) {
-    api.sizeColumnsToFit();
-  }
 }

@@ -55,6 +55,11 @@ const routes: Route[] = [
     path: 'rows',
     loadChildren: () =>
       import('./features/rows/rows.module').then(m => m.RowsModule)
+  },
+  {
+    path: 'styling',
+    loadChildren: () =>
+      import('./features/styling/styling.module').then(m => m.StylingModule)
   }
 ];
 

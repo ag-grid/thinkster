@@ -2,6 +2,16 @@
   background: #efefef;
 }
 
+.cell-value-negative {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.cell-value-positive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
 .full-width-cell {
   background: #000;
   position: relative;
