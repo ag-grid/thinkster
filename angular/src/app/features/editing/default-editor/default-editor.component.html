@@ -1,0 +1,11 @@
+<app-content>
+  <app-title>Default Editor</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [singleClickEdit]="true"
+    (cellValueChanged)="onCellValueChanged($event)"
+  >
+  </ag-grid-angular>
+</app-content>

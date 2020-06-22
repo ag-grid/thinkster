@@ -21,46 +21,51 @@ const routes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'home',
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'getting-started',
     loadChildren: () =>
       import('./features/getting-started/getting-started.module').then(
-        m => m.GettingStartedModule
-      )
+        (m) => m.GettingStartedModule
+      ),
   },
   {
     path: 'data',
     loadChildren: () =>
-      import('./features/data/data.module').then(m => m.DataModule)
+      import('./features/data/data.module').then((m) => m.DataModule),
   },
   {
     path: 'column',
     loadChildren: () =>
-      import('./features/column/column.module').then(m => m.ColumnModule)
+      import('./features/column/column.module').then((m) => m.ColumnModule),
   },
   {
     path: 'filtering',
     loadChildren: () =>
       import('./features/filtering/filtering.module').then(
-        m => m.FilteringModule
-      )
+        (m) => m.FilteringModule
+      ),
   },
   {
     path: 'rows',
     loadChildren: () =>
-      import('./features/rows/rows.module').then(m => m.RowsModule)
+      import('./features/rows/rows.module').then((m) => m.RowsModule),
   },
   {
     path: 'styling',
     loadChildren: () =>
-      import('./features/styling/styling.module').then(m => m.StylingModule)
-  }
+      import('./features/styling/styling.module').then((m) => m.StylingModule),
+  },
+  {
+    path: 'editing',
+    loadChildren: () =>
+      import('./features/editing/editing.module').then((m) => m.EditingModule),
+  },
 ];
 
 @NgModule({
@@ -76,16 +81,16 @@ const routes: Route[] = [
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true
-      }
+        strictActionImmutability: true,
+      },
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
-      logOnly: environment.production
+      logOnly: environment.production,
     }),
-    EffectsModule.forFeature([CustomerEffects])
+    EffectsModule.forFeature([CustomerEffects]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

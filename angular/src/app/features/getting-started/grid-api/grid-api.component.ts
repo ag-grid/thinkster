@@ -5,7 +5,7 @@ import { products } from '../../../../../data/data.json';
 
 @Component({
   templateUrl: './grid-api.component.html',
-  styleUrls: ['./grid-api.component.scss']
+  styleUrls: ['./grid-api.component.scss'],
 })
 export class GridApiComponent {
   /**
@@ -24,16 +24,16 @@ export class GridApiComponent {
       headerName: 'Name',
       field: 'name',
       sortable: true,
-      filter: true
+      filter: true,
     },
     {
       headerName: 'Price',
       field: 'price',
       sortable: true,
-      filter: 'agNumberColumnFilter'
+      filter: 'agNumberColumnFilter',
     },
     { headerName: 'Color', field: 'color', filter: true },
-    { headerName: 'Details', field: 'details', filter: 'agTextColumnFilter' }
+    { headerName: 'Details', field: 'details', filter: 'agTextColumnFilter' },
   ];
 
   /**
@@ -44,7 +44,7 @@ export class GridApiComponent {
       name,
       price: Number(price),
       color,
-      details
+      details,
     })
   );
 
@@ -75,13 +75,12 @@ export class GridApiComponent {
     this.gridApi.setSortModel([
       {
         colId: 'name',
-        sort
+        sort,
       },
       {
         colId: 'price',
-        sort
-      }
+        sort,
+      },
     ]);
-    console.log(this.gridApi.getSortModel());
   }
 }

@@ -6,33 +6,33 @@
 @import './app/styles/theme';
 @import './app/styles/typography';
 
-// @import '~ag-grid-community/dist/styles/ag-grid.scss';
-// @import '~ag-grid-community/dist/styles/ag-theme-alpine.css';
-// @import '~ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
-// @import '~ag-grid-community/dist/styles/ag-theme-balham.css';
-// @import '~ag-grid-community/dist/styles/ag-theme-balham-dark.css';
-// @import '~ag-grid-community/dist/styles/ag-theme-material.css';
+@import '~ag-grid-community/dist/styles/ag-grid.scss';
+@import '~ag-grid-community/dist/styles/ag-theme-alpine.css';
+@import '~ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
+@import '~ag-grid-community/dist/styles/ag-theme-balham.css';
+@import '~ag-grid-community/dist/styles/ag-theme-balham-dark.css';
+@import '~ag-grid-community/dist/styles/ag-theme-material.css';
 
-@import '~ag-grid-community/src/styles/ag-grid.scss';
-@import '~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin';
+// @import '~ag-grid-community/src/styles/ag-grid.scss';
+// @import '~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin';
 
-.ag-theme-alpine {
-  @include ag-theme-alpine(
-    (
-      grid-size: 4px,
-      alpine-active-color: #0084e7,
-      borders: false,
-    )
-  );
+// .ag-theme-alpine {
+//   @include ag-theme-alpine(
+//     (
+//       grid-size: 4px,
+//       alpine-active-color: #0084e7,
+//       borders: false,
+//     )
+//   );
 
-  .ag-header {
-    background-color: ag-param(background-color);
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    @include ag-color-property(border-bottom-color, alpine-active-color);
-  }
+//   .ag-header {
+//     background-color: ag-param(background-color);
+//     border-bottom-width: 2px;
+//     border-bottom-style: solid;
+//     @include ag-color-property(border-bottom-color, alpine-active-color);
+//   }
 
-  .ag-row-even {
-    background-color: blanchedalmond;
-  }
-}
+//   .ag-row-even {
+//     background-color: blanchedalmond;
+//   }
+// }
