@@ -7,6 +7,7 @@ import { MaterialModule } from '../../material.module';
 import { SharedModule } from '../../shared/shared.module';
 import { DefaultEditorComponent } from './default-editor';
 import { ProvidedEditorsComponent } from './provided-editors';
+import { ValueParserComponent } from './value-parser';
 
 const routes: Routes = [
   {
@@ -17,10 +18,18 @@ const routes: Routes = [
     path: 'editors',
     component: ProvidedEditorsComponent,
   },
+  {
+    path: 'value-parser',
+    component: ValueParserComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [DefaultEditorComponent, ProvidedEditorsComponent],
+  declarations: [
+    DefaultEditorComponent,
+    ProvidedEditorsComponent,
+    ValueParserComponent,
+  ],
   imports: [
     AgGridModule.withComponents([]),
     CommonModule,
