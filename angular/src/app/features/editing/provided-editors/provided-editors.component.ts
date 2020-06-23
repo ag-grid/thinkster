@@ -5,10 +5,10 @@ import { ColDef } from 'ag-grid-community';
 import { accounts, customers, orders } from '../../../../../data/data.json';
 
 @Component({
-  templateUrl: './default-editor.component.html',
-  styleUrls: ['./default-editor.component.scss'],
+  templateUrl: './provided-editors.component.html',
+  styleUrls: ['./provided-editors.component.scss'],
 })
-export class DefaultEditorComponent {
+export class ProvidedEditorsComponent {
   /**
    * The column definitions is an array of ColDef objects.
    */
@@ -17,11 +17,31 @@ export class DefaultEditorComponent {
       headerName: 'Customer Name',
       field: 'customer.name',
       editable: true,
+      // cellEditor: 'agTextCellEditor',
+      cellEditor: 'agLargeTextCellEditor',
+    },
+    {
+      headerName: 'Account',
+      field: 'account.name',
+      editable: true,
+      // cellEditor: 'agSelectCellEditor',
+      cellEditor: 'agPopupSelectCellEditor',
+      cellEditorParams: {
+        values: [
+          'Auto Loan Account',
+          'Checking Account',
+          'Credit Card Account',
+          'Home Loan Account',
+          'Investment Account',
+          'Personal Loan Account',
+          'Savings Account',
+        ],
+      },
     },
     {
       headerName: 'Account No',
       field: 'account.accountNumber',
-      type: 'nonEditableColumn',
+      editable: true,
     },
     {
       headerName: 'Date of Order',

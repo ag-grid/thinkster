@@ -6,16 +6,21 @@ import { AgGridModule } from 'ag-grid-angular';
 import { MaterialModule } from '../../material.module';
 import { SharedModule } from '../../shared/shared.module';
 import { DefaultEditorComponent } from './default-editor';
+import { ProvidedEditorsComponent } from './provided-editors';
 
 const routes: Routes = [
   {
     path: 'default',
     component: DefaultEditorComponent,
   },
+  {
+    path: 'editors',
+    component: ProvidedEditorsComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [DefaultEditorComponent],
+  declarations: [DefaultEditorComponent, ProvidedEditorsComponent],
   imports: [
     AgGridModule.withComponents([]),
     CommonModule,
