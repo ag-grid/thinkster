@@ -17,14 +17,12 @@ export class ProvidedEditorsComponent {
       headerName: 'Customer Name',
       field: 'customer.name',
       editable: true,
-      // cellEditor: 'agTextCellEditor',
       cellEditor: 'agLargeTextCellEditor',
     },
     {
       headerName: 'Account',
       field: 'account.name',
       editable: true,
-      // cellEditor: 'agSelectCellEditor',
       cellEditor: 'agPopupSelectCellEditor',
       cellEditorParams: {
         values: [
@@ -51,7 +49,6 @@ export class ProvidedEditorsComponent {
         const today = new Date();
         return dateOfOrder < today;
       },
-      cellEditor: 'agPopupTextCellEditor',
       valueFormatter: ({ value }) => this.datePipe.transform(value, 'short'),
     },
   ];

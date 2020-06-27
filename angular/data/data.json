@@ -1,14 +1,14 @@
 {
   "customers": [
     {
-      "name": "Feast LLC",
+      "name": "Brian Love",
       "catchPhrase": "Customizable contextually-based framework",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/guiiipontes/128.jpg",
       "address": {
         "street1": "Golda Pines",
-        "city": "Darebury",
-        "state": "South Dakota",
-        "zip": "36640-2337"
+        "city": "Portland",
+        "state": "OR",
+        "zip": "97214"
       },
       "id": 1
     },

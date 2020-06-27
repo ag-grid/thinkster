@@ -7,6 +7,7 @@ import { MaterialModule } from '../../material.module';
 import { SharedModule } from '../../shared/shared.module';
 import { DefaultEditorComponent } from './default-editor';
 import { ProvidedEditorsComponent } from './provided-editors';
+import { SavingDataComponent } from './saving-data';
 import { ValueParserComponent } from './value-parser';
 import { ValueSetterComponent } from './value-setter';
 
@@ -27,12 +28,17 @@ const routes: Routes = [
     path: 'value-setter',
     component: ValueSetterComponent,
   },
+  {
+    path: 'saving-data',
+    component: SavingDataComponent,
+  },
 ];
 
 @NgModule({
   declarations: [
     DefaultEditorComponent,
     ProvidedEditorsComponent,
+    SavingDataComponent,
     ValueParserComponent,
     ValueSetterComponent,
   ],
