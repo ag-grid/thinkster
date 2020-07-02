@@ -7,11 +7,13 @@ import { MaterialModule } from '../../material.module';
 import {
   CurrencyRendererComponent,
   DateFilterComponent,
+  MaterialHeaderComponent,
   SliderFilterComponent,
 } from '../../shared/components';
 import { SharedModule } from '../../shared/shared.module';
 import { EditorComponent } from './editor';
 import { FilterComponent } from './filter';
+import { HeaderComponent } from './header/header.component';
 import { RendererComponent } from './renderer';
 
 const routes: Routes = [
@@ -27,14 +29,24 @@ const routes: Routes = [
     path: 'editor',
     component: EditorComponent,
   },
+  {
+    path: 'header',
+    component: HeaderComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [EditorComponent, FilterComponent, RendererComponent],
+  declarations: [
+    EditorComponent,
+    FilterComponent,
+    HeaderComponent,
+    RendererComponent,
+  ],
   imports: [
     AgGridModule.withComponents([
       CurrencyRendererComponent,
       DateFilterComponent,
+      MaterialHeaderComponent,
       SliderFilterComponent,
     ]),
     CommonModule,

@@ -8,6 +8,7 @@ import {
   CurrencyRendererComponent,
   DateEditorComponent,
   DateFilterComponent,
+  MaterialHeaderComponent,
   SliderFilterComponent,
 } from './components';
 import { TitleDirective } from './directives';
@@ -17,6 +18,7 @@ const directives = [
   CurrencyRendererComponent,
   DateEditorComponent,
   DateFilterComponent,
+  MaterialHeaderComponent,
   TitleDirective,
   SliderFilterComponent,
 ];
