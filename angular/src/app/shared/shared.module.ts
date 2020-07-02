@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import {
   ContentComponent,
+  CurrencyRendererComponent,
   DateFilterComponent,
   SliderFilterComponent,
 } from './components';
@@ -12,6 +13,7 @@ import { TitleDirective } from './directives';
 
 const directives = [
   ContentComponent,
+  CurrencyRendererComponent,
   DateFilterComponent,
   TitleDirective,
   SliderFilterComponent,

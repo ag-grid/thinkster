@@ -1,4 +1,4 @@
-import { CurrencyPipe, formatDate } from '@angular/common';
+import { formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { ColDef } from 'ag-grid-community';
 
@@ -9,16 +9,13 @@ import {
   orders,
   products,
 } from '../../../../../data/data.json';
-import {
-  DateFilterComponent,
-  SliderFilterComponent,
-} from '../../../shared/components';
+import { CurrencyRendererComponent } from '../../../shared/components';
 
 @Component({
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss'],
+  templateUrl: './renderer.component.html',
+  styleUrls: ['./renderer.component.scss'],
 })
-export class FilterComponent {
+export class RendererComponent {
   /**
    * The column definitions is an array of ColDef objects.
    */
@@ -38,40 +35,18 @@ export class FilterComponent {
       field: 'dateOfOrder',
       valueFormatter: ({ value }) =>
         formatDate(value, 'yyyy/MM/dd', this.locale),
-      filter: 'agDateColumnFilter',
-      filterParams: {
-        filterOptions: ['equals'],
-      },
-      floatingFilter: true,
-      floatingFilterComponent: 'dateFilter',
-      floatingFilterComponentParams: {
-        suppressFilterButton: true,
-      },
-      // suppressMenu: false,
-      width: 260,
     },
     {
       headerName: 'Total',
       field: 'total',
-      valueFormatter: ({ value }) => this.currencyPipe.transform(String(value)),
-      filter: 'agNumberColumnFilter',
-      filterParams: {
-        filterOptions: ['greaterThan'],
-      },
-      floatingFilter: true,
-      floatingFilterComponent: 'sliderFilter',
-      floatingFilterComponentParams: {
-        min: 0,
-        max: 5000,
-        suppressFilterButton: true,
-      },
+      editable: true,
+      cellRenderer: 'currencyRenderer',
     },
   ];
 
   /** The custom framework components registered by name. */
   frameworkComponents = {
-    dateFilter: DateFilterComponent,
-    sliderFilter: SliderFilterComponent,
+    currencyRenderer: CurrencyRendererComponent,
   };
 
   /**
@@ -92,8 +67,5 @@ export class FilterComponent {
       .reduce((prev, current) => prev + Number(current.price), 0),
   }));
 
-  constructor(
-    private readonly currencyPipe: CurrencyPipe,
-    @Inject(LOCALE_ID) protected readonly locale: string
-  ) {}
+  constructor(@Inject(LOCALE_ID) protected readonly locale: string) {}
 }

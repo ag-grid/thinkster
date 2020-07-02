@@ -5,23 +5,33 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { MaterialModule } from '../../material.module';
 import {
+  CurrencyRendererComponent,
   DateFilterComponent,
   SliderFilterComponent,
 } from '../../shared/components';
 import { SharedModule } from '../../shared/shared.module';
-import { FilterComponent } from './filter/filter.component';
+import { FilterComponent } from './filter';
+import { RendererComponent } from './renderer';
 
 const routes: Routes = [
   {
     path: 'filter',
     component: FilterComponent,
   },
+  {
+    path: 'renderer',
+    component: RendererComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [FilterComponent],
+  declarations: [FilterComponent, RendererComponent],
   imports: [
-    AgGridModule.withComponents([DateFilterComponent, SliderFilterComponent]),
+    AgGridModule.withComponents([
+      CurrencyRendererComponent,
+      DateFilterComponent,
+      SliderFilterComponent,
+    ]),
     CommonModule,
     MaterialModule,
     RouterModule.forChild(routes),

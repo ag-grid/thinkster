@@ -14,7 +14,6 @@ export interface SliderFilterParams extends IFloatingFilterParams {
 }
 
 @Component({
-  selector: 'app-slider-filter',
   templateUrl: './slider-filter.component.html',
   styleUrls: ['./slider-filter.component.scss'],
 })
