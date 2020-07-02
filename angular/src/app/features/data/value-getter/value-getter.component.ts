@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ColDef, GridApi } from 'ag-grid-community';
-import { Customer } from 'src/app/models/index.js';
 
 import { customers } from '../../../../../data/data.json';
+import { Customer } from '../../../models';
 
 @Component({
   templateUrl: './value-getter.component.html',
-  styleUrls: ['./value-getter.component.scss']
+  styleUrls: ['./value-getter.component.scss'],
 })
 export class ValueGetterComponent {
   /**
@@ -22,8 +22,8 @@ export class ValueGetterComponent {
     {
       headerName: 'Address',
       valueGetter: ({ data }: { data: Customer }) =>
-        `${data.address.street1} ${data.address.city}, ${data.address.state} ${data.address.zip}`
-    }
+        `${data.address.street1} ${data.address.city}, ${data.address.state} ${data.address.zip}`,
+    },
   ];
 
   /**

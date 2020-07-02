@@ -1,14 +1,24 @@
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
+  MatDatepickerModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatNativeDateModule,
+  MatSliderModule,
 } from '@angular/material';
 
-const modules = [MatButtonModule, MatFormFieldModule, MatInputModule];
+const modules = [
+  MatButtonModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatNativeDateModule,
+  MatSliderModule,
+];
 
 @NgModule({
   imports: modules,
-  exports: modules
+  exports: modules,
 })
 export class MaterialModule {}

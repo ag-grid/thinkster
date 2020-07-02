@@ -2,11 +2,12 @@ import { Component, OnDestroy } from '@angular/core';
 import { ColDef, GridApi, IDatasource } from 'ag-grid-community';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { CustomerService } from 'src/app/services';
+
+import { CustomerService } from '../../../services';
 
 @Component({
   templateUrl: './infinite.component.html',
-  styleUrls: ['./infinite.component.scss']
+  styleUrls: ['./infinite.component.scss'],
 })
 export class InfiniteComponent implements OnDestroy {
   /** The infinite row model block size. */
@@ -19,7 +20,7 @@ export class InfiniteComponent implements OnDestroy {
     { headerName: 'Street', field: 'address.street1' },
     { headerName: 'City', field: 'address.city' },
     { headerName: 'State', field: 'address.state' },
-    { headerName: 'Zip', field: 'address.zip' }
+    { headerName: 'Zip', field: 'address.zip' },
   ];
 
   /** Infinite row model datasource. */
@@ -30,9 +31,9 @@ export class InfiniteComponent implements OnDestroy {
         .pipe(takeUntil(this.destroy))
         .subscribe(
           ({ customers, totalCount }) => successCallback(customers, totalCount),
-          error => failCallback()
+          (error) => failCallback()
         ),
-    destroy: () => this.destroy.next()
+    destroy: () => this.destroy.next(),
   };
 
   /** The initial row count for infinite row model. */

@@ -66,6 +66,13 @@ const routes: Route[] = [
     loadChildren: () =>
       import('./features/editing/editing.module').then((m) => m.EditingModule),
   },
+  {
+    path: 'components',
+    loadChildren: () =>
+      import('./features/components/components.module').then(
+        (m) => m.ComponentsModule
+      ),
+  },
 ];
 
 @NgModule({
