@@ -10,6 +10,7 @@ import {
   SliderFilterComponent,
 } from '../../shared/components';
 import { SharedModule } from '../../shared/shared.module';
+import { EditorComponent } from './editor';
 import { FilterComponent } from './filter';
 import { RendererComponent } from './renderer';
 
@@ -22,10 +23,14 @@ const routes: Routes = [
     path: 'renderer',
     component: RendererComponent,
   },
+  {
+    path: 'editor',
+    component: EditorComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [FilterComponent, RendererComponent],
+  declarations: [EditorComponent, FilterComponent, RendererComponent],
   imports: [
     AgGridModule.withComponents([
       CurrencyRendererComponent,
