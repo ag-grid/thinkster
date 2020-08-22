@@ -11,9 +11,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home';
 import { SharedModule } from './shared/shared.module';
-import { AppEffects } from './state/app.effects';
-import { CustomerEffects } from './state/customer.effects';
-import { metaReducers, reducers } from './state/reducers';
+import { AppEffects, CustomerEffects, metaReducers, reducers } from './state';
 
 const directives = [AppComponent, HomeComponent];
 
@@ -60,6 +58,10 @@ const routes: Route[] = [
     path: 'styling',
     loadChildren: () =>
       import('./features/styling/styling.module').then((m) => m.StylingModule),
+  },
+  {
+    path: 'selection',
+    loadChildren: () => import('./features/selection/selection.module').then((m) => m.SelectionModule)
   },
   {
     path: 'editing',
