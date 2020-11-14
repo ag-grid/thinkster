@@ -6,7 +6,7 @@
     [columnDefs]="columnDefs"
     [pinnedTopRowData]="pinnedTopRowData | async"
     (gridReady)="onGridReady($event)"
-    (selectionChanged)="onSelectionChanged($event)"
+    (selectionChanged)="onSelectionChanged()"
     rowSelection="single"
   >
   </ag-grid-angular>

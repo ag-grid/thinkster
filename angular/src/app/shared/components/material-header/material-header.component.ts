@@ -37,4 +37,12 @@ export class MaterialHeaderComponent implements IHeaderAngularComp {
   onSort(direction: string, event: MouseEvent): void {
     this.params.setSort(direction, event.shiftKey);
   }
+
+  refresh(params: IHeaderParams): boolean {
+    this.displayName = params.displayName;
+    this.enableSorting = params.enableSorting;
+    this.params = params;
+    // return false to let ag-grid refresh the component via destroying and creating it
+    return true;
+  }
 }
