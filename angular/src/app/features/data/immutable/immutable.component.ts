@@ -1,33 +1,21 @@
-/**************************************************************************************************
- * ************************************************************************************************
- *
- * DEPRECATION NOTICE
- *
- * The delta row data model was deprecated in v23.1.0 of ag-Grid.
- * If you are using a newer version then refer to the src/app/features/data/immutable demo
- *
- * ************************************************************************************************
- * ************************************************************************************************
- */
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { ColDef, GridApi } from 'ag-grid-community';
-
 import { Customer } from '../../../models';
 import {
-  State,
-  fetchCustomersForDeltaRowData,
+  fetchCustomersForImmutableData,
   selectAllCustomers,
+  State,
   updateCustomer,
 } from '../../../state';
 
 @Component({
-  templateUrl: './delta.component.html',
-  styleUrls: ['./delta.component.scss'],
+  selector: 'app-immutable',
+  templateUrl: './immutable.component.html',
+  styleUrls: ['./immutable.component.scss'],
 })
-export class DeltaComponent implements OnInit {
+export class ImmutableComponent implements OnInit {
   /**
    * The column definitions is an array of ColDef objects.
    */
@@ -65,7 +53,7 @@ export class DeltaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.dispatch(fetchCustomersForDeltaRowData());
+    this.store.dispatch(fetchCustomersForImmutableData());
   }
 
   // You must implement this method for the delta row model

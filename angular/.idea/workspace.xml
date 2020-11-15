@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cf01e90-c620-4902-b11f-5e055106c60d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/material.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/date-editor/date-editor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/date-editor/date-editor.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/material-header/material-header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/material-header/material-header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/slider-filter/slider-filter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/slider-filter/slider-filter.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/features/data/data.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/features/data/data.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/features/data/delta/delta.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/features/data/delta/delta.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/customer.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/customer.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/customer.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/customer.effects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/customer.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/customer.reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597514077609</updated>
       <workItem from="1597514078674" duration="2583000" />
-      <workItem from="1605380803239" duration="1883000" />
+      <workItem from="1605380803239" duration="13691000" />
     </task>
     <servers />
   </component>
@@ -94,13 +94,13 @@
       <screen x="0" y="23" width="2560" height="1373" />
     </state>
     <state x="811" y="348" key="SettingsEditor/0.23.2560.1373@0.23.2560.1373" timestamp="1597514789429" />
-    <state x="1296" y="626" width="607" height="522" key="find.popup" timestamp="1605384458264">
+    <state x="1296" y="626" width="607" height="522" key="find.popup" timestamp="1605396137839">
       <screen x="0" y="25" width="3200" height="1725" />
     </state>
-    <state x="1296" y="626" width="607" height="522" key="find.popup/0.25.3200.1725@0.25.3200.1725" timestamp="1605384458264" />
-    <state x="1263" y="425" width="672" height="678" key="search.everywhere.popup" timestamp="1605384289465">
+    <state x="1296" y="626" width="607" height="522" key="find.popup/0.25.3200.1725@0.25.3200.1725" timestamp="1605396137839" />
+    <state x="1263" y="425" width="672" height="678" key="search.everywhere.popup" timestamp="1605400759401">
       <screen x="0" y="25" width="3200" height="1725" />
     </state>
-    <state x="1263" y="425" width="672" height="678" key="search.everywhere.popup/0.25.3200.1725@0.25.3200.1725" timestamp="1605384289465" />
+    <state x="1263" y="425" width="672" height="678" key="search.everywhere.popup/0.25.3200.1725@0.25.3200.1725" timestamp="1605400759401" />
   </component>
 </project>

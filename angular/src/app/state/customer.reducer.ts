@@ -1,7 +1,7 @@
-import { EntityAdapter, EntityState, createEntityAdapter } from '@ngrx/entity';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 
-import { Customer } from './../models';
+import { Customer } from '../models/index';
 import * as CustomerActions from './customer.actions';
 
 export const customersFeatureKey = 'customers';
@@ -16,7 +16,7 @@ export const customerAdapter: EntityAdapter<Customer> = createEntityAdapter<
 
 export const initialCustomerState: CustomerState = customerAdapter.getInitialState(
   {
-    selectedId: null
+    selectedId: null,
   }
 );
 
@@ -48,6 +48,7 @@ const customerReducer = createReducer(
   ),
   on(
     CustomerActions.fetchCustomersForDeltaRowDataSuccess,
+    CustomerActions.fetchCustomersForImmutableDataSuccess,
     CustomerActions.paginateCustomersForAsyncGridSuccess,
     (state, action) => customerAdapter.addAll(action.customers, state)
   ),
@@ -57,9 +58,11 @@ const customerReducer = createReducer(
   ),
   on(CustomerActions.selectCustomer, (state, { id }) => ({
     ...state,
-    selectedId: id
+    selectedId: id,
   })),
-  on(CustomerActions.clearCustomers, state => customerAdapter.removeAll(state))
+  on(CustomerActions.clearCustomers, (state) =>
+    customerAdapter.removeAll(state)
+  )
 );
 
 export function reducer(state: CustomerState | undefined, action: Action) {

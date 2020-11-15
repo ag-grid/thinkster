@@ -1,0 +1,48 @@
+<app-content>
+  <app-title>Immutable Data</app-title>
+  <ag-grid-angular
+    class="ag-theme-balham"
+    [rowData]="customers | async"
+    [columnDefs]="columnDefs"
+    [getRowNodeId]="getRowNodeId"
+    (selectionChanged)="onSelectionChanged($event)"
+    (gridReady)="onGridReady($event)"
+    immutableData="true"
+    rowSelection="single"
+  >
+  </ag-grid-angular>
+  <form [formGroup]="formGroup" (submit)="onSubmit()">
+    <h2>Edit Customer</h2>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Catch Phrase</mat-label>
+      <input matInput formControlName="catchPhrase" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Avatar URL</mat-label>
+      <input matInput formControlName="avatar" type="text" />
+    </mat-form-field>
+    <div formGroupName="address">
+      <mat-form-field>
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street1" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>State</mat-label>
+        <input matInput formControlName="state" type="text" /><br />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Zip</mat-label>
+        <input matInput formControlName="zip" type="text" /><br />
+      </mat-form-field>
+    </div>
+    <button mat-button type="submit">Save</button>
+  </form>
+</app-content>
