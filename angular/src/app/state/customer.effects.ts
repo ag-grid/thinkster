@@ -8,13 +8,15 @@ import {
   fetchCustomersForDeltaRowData,
   fetchCustomersForDeltaRowDataFailure,
   fetchCustomersForDeltaRowDataSuccess,
+  fetchCustomersForImmutableData,
+  fetchCustomersForImmutableDataFailure,
+  fetchCustomersForImmutableDataSuccess,
   paginateCustomersForAsyncGrid,
   paginateCustomersForAsyncGridFailure,
   paginateCustomersForAsyncGridSuccess,
   sliceCustomersForInfiniteRowModel,
   sliceCustomersForInfiniteRowModelFailure,
   sliceCustomersForInfiniteRowModelSuccess,
-  updateCustomer
 } from './customer.actions';
 
 @Injectable()
@@ -24,8 +26,26 @@ export class CustomerEffects {
       ofType(fetchCustomersForDeltaRowData),
       exhaustMap(() =>
         this.customerService.fetch().pipe(
-          map(customers => fetchCustomersForDeltaRowDataSuccess({ customers })),
-          catchError(error => of(fetchCustomersForDeltaRowDataFailure(error)))
+          map((customers) =>
+            fetchCustomersForDeltaRowDataSuccess({ customers })
+          ),
+          catchError((error) => of(fetchCustomersForDeltaRowDataFailure(error)))
+        )
+      )
+    )
+  );
+
+  fetchCustomersForImmutableData$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchCustomersForImmutableData),
+      exhaustMap(() =>
+        this.customerService.fetch().pipe(
+          map((customers) =>
+            fetchCustomersForImmutableDataSuccess({ customers })
+          ),
+          catchError((error) =>
+            of(fetchCustomersForImmutableDataFailure(error))
+          )
         )
       )
     )
@@ -36,8 +56,10 @@ export class CustomerEffects {
       ofType(paginateCustomersForAsyncGrid),
       exhaustMap(({ page, limit }) =>
         this.customerService.paginate(page, limit).pipe(
-          map(customers => paginateCustomersForAsyncGridSuccess({ customers })),
-          catchError(error => of(paginateCustomersForAsyncGridFailure(error)))
+          map((customers) =>
+            paginateCustomersForAsyncGridSuccess({ customers })
+          ),
+          catchError((error) => of(paginateCustomersForAsyncGridFailure(error)))
         )
       )
     )
@@ -48,8 +70,10 @@ export class CustomerEffects {
       ofType(sliceCustomersForInfiniteRowModel),
       exhaustMap(({ start, end }) =>
         this.customerService.slice(start, end).pipe(
-          map(customers => sliceCustomersForInfiniteRowModelSuccess(customers)),
-          catchError(error =>
+          map((customers) =>
+            sliceCustomersForInfiniteRowModelSuccess(customers)
+          ),
+          catchError((error) =>
             of(sliceCustomersForInfiniteRowModelFailure(error))
           )
         )

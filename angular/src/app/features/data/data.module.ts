@@ -13,36 +13,41 @@ import { InfiniteComponent } from './infinite';
 import { SimpleComponent } from './simple';
 import { UpdatingComponent } from './updating';
 import { ValueGetterComponent } from './value-getter';
+import { ImmutableComponent } from './immutable/immutable.component';
 
 const routes: Routes = [
   {
     path: 'simple',
-    component: SimpleComponent
+    component: SimpleComponent,
   },
   {
     path: 'async',
-    component: AsyncComponent
+    component: AsyncComponent,
   },
   {
     path: 'value-getter',
-    component: ValueGetterComponent
+    component: ValueGetterComponent,
   },
   {
     path: 'cell-rendering',
-    component: CellRenderingComponent
+    component: CellRenderingComponent,
   },
   {
     path: 'updating',
-    component: UpdatingComponent
+    component: UpdatingComponent,
   },
   {
     path: 'delta',
-    component: DeltaComponent
+    component: DeltaComponent,
+  },
+  {
+    path: 'immutable',
+    component: ImmutableComponent,
   },
   {
     path: 'infinite',
-    component: InfiniteComponent
-  }
+    component: InfiniteComponent,
+  },
 ];
 
 @NgModule({
@@ -50,10 +55,11 @@ const routes: Routes = [
     AsyncComponent,
     CellRenderingComponent,
     DeltaComponent,
+    ImmutableComponent,
     InfiniteComponent,
     SimpleComponent,
     UpdatingComponent,
-    ValueGetterComponent
+    ValueGetterComponent,
   ],
   imports: [
     AgGridModule.withComponents([]),
@@ -62,7 +68,7 @@ const routes: Routes = [
     MaterialModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
 export class DataModule {}

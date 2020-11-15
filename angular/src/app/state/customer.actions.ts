@@ -1,4 +1,3 @@
-import { Update } from '@ngrx/entity';
 import { UpdateNum } from '@ngrx/entity/src/models';
 import { createAction, props } from '@ngrx/store';
 
@@ -16,6 +15,20 @@ export const fetchCustomersForDeltaRowDataFailure = createAction(
 
 export const fetchCustomersForDeltaRowDataSuccess = createAction(
   '[Customer/API] SUCCESS: Fetch Customers for Delta Row Data',
+  props<{ customers: Customer[] }>()
+);
+
+export const fetchCustomersForImmutableData = createAction(
+  '[Customer/API] Fetch Customers for Immutable Data'
+);
+
+export const fetchCustomersForImmutableDataFailure = createAction(
+  '[Customer/API] FAILURE: Fetch Customers for Immutable Data',
+  props<{ error: Error }>()
+);
+
+export const fetchCustomersForImmutableDataSuccess = createAction(
+  '[Customer/API] SUCCESS: Fetch Customers for Immutable Data',
   props<{ customers: Customer[] }>()
 );
 
