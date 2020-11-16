@@ -37,16 +37,6 @@ export class SliderFilterComponent
     this.min = params.min;
   }
 
-  onChange(event: MatSliderChange): void {
-    // const value = event.value;
-    // this.params.parentFilterInstance((instance: NumberFilter) =>
-    //   instance.onFloatingFilterChanged(
-    //     'greaterThan',
-    //     value === 0 ? null : value
-    //   )
-    // );
-  }
-
   onInput(event: MatSliderChange): void {
     const value = event.value;
     this.params.parentFilterInstance((instance: NumberFilter) =>

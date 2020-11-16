@@ -56,7 +56,6 @@ export class ImmutableComponent implements OnInit {
     this.store.dispatch(fetchCustomersForImmutableData());
   }
 
-  // You must implement this method for the delta row model
   getRowNodeId(customer: Customer): number {
     return customer.id;
   }

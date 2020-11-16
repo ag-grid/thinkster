@@ -59,8 +59,4 @@ export class DateEditorComponent
   getValue(): any {
     return this.value;
   }
-
-  isPopup(): boolean {
-    return false;
-  }
 }
