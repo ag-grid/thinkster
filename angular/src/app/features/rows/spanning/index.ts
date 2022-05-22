@@ -1,1 +1,0 @@
-export * from './spanning.component';
